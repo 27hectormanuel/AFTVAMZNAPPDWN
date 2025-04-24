@@ -1,2 +1,2 @@
 # AFTVAMZNAPPDWN
-Download FireTV APK files directly from Amazon Appstore/Amazon Underground to your PC
+Download FireTV APPS (.APKs) files directly from Amazon Appstore to your PC
