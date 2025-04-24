@@ -1,0 +1,86 @@
+{
+  "name": "Appstore APK Downloader for FireTV",
+  "description": "Download FireTV APK files from Amazon Appstore directly to your PC.",
+  "version": "0.0.2",
+  "author": "mr.pacha",
+  "manifest_version": 2,
+
+  "icons": {
+    "16": "img/firetv-icon-16.png",
+    "48": "img/firetv-icon-48.png",
+    "128": "img/firetv-icon-128.png"
+  },
+
+  "background": {
+    "persistent": false,
+    "scripts": [
+      "js/libs/node-rsa.js",
+      "js/firetv-analytics.js",
+      "js/firetv-browser-support.js",
+      "js/firetv-appstore-utils.js",
+      "js/firetv-appstore-webservice.js",
+      "js/firetv-appstore-api.js",
+      "js/firetv-background.js"
+    ]
+  },
+  "options_page": "options.html",
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.amazon.com/*",
+        "*://*.amazon.com.au/*",
+        "*://*.amazon.com.br/*",
+        "*://*.amazon.ca/*",
+        "*://*.amazon.cn/*",
+        "*://*.amazon.fr/*",
+        "*://*.amazon.de/*",
+        "*://*.amazon.in/*",
+        "*://*.amazon.it/*",
+        "*://*.amazon.nl/*",
+        "*://*.amazon.es/*",
+        "*://*.amazon.co.jp/*",
+        "*://*.amazon.com.mx/*",
+        "*://*.amazon.co.uk/*"
+      ],
+      "run_at": "document_end",
+      "js": ["js/cs/fire-tv-content-scripts.js"]
+    },
+    {
+      "matches": [
+        "*://*.amazon.com/gp/yourstore/home*",
+        "*://*.amazon.com.au/gp/yourstore/home*",
+        "*://*.amazon.com.br/gp/yourstore/home*",
+        "*://*.amazon.ca/gp/yourstore/home*",
+        "*://*.amazon.cn/gp/yourstore/home*",
+        "*://*.amazon.fr/gp/yourstore/home*",
+        "*://*.amazon.de/gp/yourstore/home*",
+        "*://*.amazon.in/gp/yourstore/home*",
+        "*://*.amazon.it/gp/yourstore/home*",
+        "*://*.amazon.nl/gp/yourstore/home*",
+        "*://*.amazon.es/gp/yourstore/home*",
+        "*://*.amazon.co.jp/gp/yourstore/home*",
+        "*://*.amazon.com.mx/gp/yourstore/home*",
+        "*://*.amazon.co.uk/gp/yourstore/home"
+      ],
+      "run_at": "document_start",
+      "js": ["js/cs/firetv-oauth2.js"]
+    }
+  ],
+  "permissions": [
+    "storage",
+    "downloads",
+    "*://*.appstore-apk-downloader.com/*",
+    "*://*.amazon.com/*"
+  ],
+  "web_accessible_resources": [
+    "img/*",
+    "firetv-oauth20callback.html"
+  ],
+  "oauth2": {
+    "client_id": "amzn1.application-oa2-client.e2efc00882154b378670b9d580927d8c",
+    "scopes": [
+      "device_auth_access"
+    ]
+  },
+  "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'"
+}
