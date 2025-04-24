@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Options - FireTV Appstore APK Downloader</title>
+  <link rel="stylesheet" href="css/firetv-pure-min.css" />
+  <link rel="stylesheet" href="css/firetv-pages.css" />
+</head>
+<body>
+
+<div class="content page-options">
+  <div class="header">
+    <h1>Options</h1>
+  </div>
+  <section class="section-login">
+    <div class="buttons">
+      <button id="btn-oa2" class="pure-button pure-button-primary">Login using OAuth2</button>
+    </div>
+  </section>
+
+  <section class="section-info">
+    <form class="pure-form pure-form-aligned">
+      <fieldset>
+        <div class="pure-control-group">
+          <label>Customer Name</label>
+          <span class="value" id="txt-customer-name"></span>
+        </div>
+        <div class="pure-control-group">
+          <label>Device Name</label>
+          <span class="value" id="txt-device-name"></span>
+        </div>
+
+        <div class="buttons">
+          <button id="btn-logout" class="pure-button pure-button-primary">Logout</button>
+        </div>
+      </fieldset>
+    </form>
+  </section>
+
+  <div class="notice">
+    <p>
+      This extension is still in <strong>beta state</strong>.
+      <br />
+      If it doesn't work for you, please don't leave a bad review but contact me. Thanks.
+    </p>
+  </div>
+</div>
+
+<div class="footer">
+  <p class="version">version <strong>0.0.1</strong></p>
+</div>
+
+<script type="text/javascript" src="js/firetv-browser-support.js"></script>
+<script type="text/javascript" src="js/libs/firetv-uuid.js"></script>
+<script type="text/javascript" src="js/firetv-appstore-utils.js"></script>
+<script type="text/javascript" src="js/firetv-appstore-api.js"></script>
+<script type="text/javascript" src="js/pages/firetv-page-options.js"></script>
+</body>
+</html>
